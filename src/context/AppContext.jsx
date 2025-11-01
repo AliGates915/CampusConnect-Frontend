@@ -47,7 +47,9 @@ export const AppContextProvider = ({ children }) => {
     setUserDataLoading(true);
     try {
       const { data } = await axios.get(`${backendUrl}/user/user-data`, {
-        headers: { token: userToken },
+        headers: {
+    Authorization: `Bearer ${userToken}`,
+  },
       });
       if (data.success) {
         setUserData(data.userData);

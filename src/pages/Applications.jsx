@@ -23,7 +23,7 @@ const Applications = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [resumeFile, setResumeFile] = useState(null);
   const [loading, setLoading] = useState(false);
-console.log(userToken);
+console.log(userData);
 
   const handleResumeSave = async () => {
     if (!resumeFile) {

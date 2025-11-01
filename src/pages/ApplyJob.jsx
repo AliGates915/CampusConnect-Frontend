@@ -30,6 +30,7 @@ const ApplyJob = () => {
   } = useContext(AppContext);
 
   const applyJob = async (jobId) => {
+    
     try {
       if (!userData) {
         navigate("/candidate-login");
