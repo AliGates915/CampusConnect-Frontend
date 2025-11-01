@@ -15,15 +15,16 @@ const ManageJobs = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `${backendUrl}/company/company/posted-jobs`,
+        `${backendUrl}/company/company-jobs`,
         {
-          headers: {
-            token: companyToken,
-          },
+          headers: { Authorization: `Bearer ${companyToken}` },
         }
       );
+
+      console.log(data);
+      
       if (data.success) {
-        setManageJobData(data.jobData);
+        setManageJobData(data.jobs);
       } else {
         toast.error(data.message);
       }
@@ -34,17 +35,13 @@ const ManageJobs = () => {
     }
   };
 
-  const changeJobVisiblity = async (id) => {
+
+  const changeJobVisiblity = async (id, status="Close") => {
     try {
-      const { data } = await axios.post(
-        `${backendUrl}/company/change-visiblity`,
+     const { data } = await axios.put(
+        `${backendUrl}/company/close-job/${id}`,
         {
-          id,
-        },
-        {
-          headers: {
-            token: companyToken,
-          },
+          headers: { Authorization: `Bearer ${companyToken}` },
         }
       );
 
@@ -64,8 +61,9 @@ const ManageJobs = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Superio - Job Portal | Dashboard";
+    document.title = "Campus Connect - Job Portal | Dashboard";
   }, []);
+console.log({manageJobData},'data');
 
   return (
     <section>
@@ -124,14 +122,18 @@ const ManageJobs = () => {
                       {job.applicants || 0}
                     </span>
                   </td>
-                  <td className="px-4 py-3 whitespace-nowrap text-sm text-center">
+                 
+                       <td className="px-4 py-3 whitespace-nowrap text-sm text-center">
                     <input
-                      onChange={() => changeJobVisiblity(job._id)}
+                      onChange={() => changeJobVisiblity(job.id)}
                       type="checkbox"
-                      checked={job.visible}
+                      checked={true}
                       className="cursor-pointer"
                     />
                   </td>
+                  
+              
+                 
                 </tr>
               ))}
             </tbody>

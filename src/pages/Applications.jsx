@@ -23,6 +23,7 @@ const Applications = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [resumeFile, setResumeFile] = useState(null);
   const [loading, setLoading] = useState(false);
+console.log(userToken);
 
   const handleResumeSave = async () => {
     if (!resumeFile) {
@@ -38,11 +39,10 @@ const Applications = () => {
       const { data } = await axios.post(
         `${backendUrl}/user/upload-resume`,
         formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            token: userToken,
-          },
+         {
+          headers: { Authorization: `Bearer ${userToken}`,
+           "Content-Type": "multipart/form-data",
+         },
         }
       );
 

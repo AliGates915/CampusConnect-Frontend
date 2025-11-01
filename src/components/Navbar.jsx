@@ -1,4 +1,5 @@
 import {
+  Bell,
   Briefcase,
   ChevronDown,
   LoaderCircle,
@@ -82,10 +83,11 @@ const Navbar = () => {
     <header className="border-b border-gray-200 mb-10 shadow-md bg-gradient-to-r from-blue-50 to-indigo-50">
       <nav className="container mx-auto px-4">
         <div className="h-20 flex items-center justify-between">
-         <Link to="/" className="flex items-center">
-  <span className="text-2xl font-bold text-blue-600">Campus Connect</span>
-</Link>
-
+          <Link to="/" className="flex items-center">
+            <span className="text-2xl font-bold text-blue-600">
+              Campus Connect
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-6">
@@ -115,6 +117,7 @@ const Navbar = () => {
               className="hidden lg:flex items-center gap-4 relative"
               ref={profileMenuRef}
             >
+
               <button
                 onClick={toggleProfileMenu}
                 className="flex items-center gap-2 focus:outline-none bg-white px-3 py-2 rounded-full shadow-sm border border-gray-100 hover:shadow-md transition-all"
@@ -143,7 +146,7 @@ const Navbar = () => {
                 <div className="absolute right-0 top-12 mt-2 w-56 origin-top-right rounded-md border border-gray-200 bg-white z-50 overflow-hidden">
                   <div>
                     <Link
-                      to="/applications"
+                      to="/applied-applications"
                       className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 gap-2"
                     >
                       <Briefcase size={16} />
@@ -197,11 +200,18 @@ const Navbar = () => {
         }`}
         ref={mobileMenuRef}
       >
-        <div className="fixed inset-0 backdrop-blur-sm bg-blue-900/20" onClick={toggleMenu} />
+        <div
+          className="fixed inset-0 backdrop-blur-sm bg-blue-900/20"
+          onClick={toggleMenu}
+        />
         <div className="relative flex flex-col w-4/5 max-w-sm h-full bg-white border-r border-r-gray-200 shadow-xl">
           <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50">
             <Link to="/" onClick={toggleMenu}>
-              <img className="h-10" src={assets.logo} alt="Campus Connect Logo" />
+              <img
+                className="h-10"
+                src={assets.logo}
+                alt="Campus Connect Logo"
+              />
             </Link>
             <button
               onClick={toggleMenu}

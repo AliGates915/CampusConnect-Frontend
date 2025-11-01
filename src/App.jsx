@@ -16,6 +16,8 @@ import AddJobs from "./pages/AddJobs";
 import ManageJobs from "./pages/ManageJobs";
 import ViewApplications from "./pages/ViewApplications";
 import { AppContext } from "./context/AppContext";
+import ShortListed from "./pages/ShortListed";
+import ProfileDetails from "./pages/ProfileDetails";
 
 const App = () => {
   const { companyToken } = useContext(AppContext);
@@ -29,6 +31,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/apply-job/:id" element={<ApplyJob />} />
         <Route path="/applications" element={<Applications />} />
+        
+          <Route path="/applied-applications" element={<ProfileDetails />} />
         <Route path="/candidate-login" element={<CandidatesLogin />} />
         <Route path="/candidate-signup" element={<CandidatesSignup />} />
         <Route path="/recruiter-login" element={<RecruiterLogin />} />
@@ -36,7 +40,9 @@ const App = () => {
         <Route path="/dashboard" element={<Dashborad />}>
           <Route path="add-job" element={<AddJobs />} />
           <Route path="manage-jobs" element={<ManageJobs />} />
+          <Route path="applied-applications" element={<ProfileDetails />} />
           <Route path="view-applications" element={<ViewApplications />} />
+          <Route path="short-applications" element={<ShortListed />} />
         </Route>
       </Routes>
     </AppLayout>
