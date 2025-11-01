@@ -134,7 +134,7 @@ const ApplyJob = () => {
                 <div className="flex items-center gap-2">
                   <img src={assets.money_icon} alt="Salary" />
                   <span>
-                    RS.:{" "}
+                    RS.{" "}
                     {jobData?.salary
                       ? kConverter.convertTo(jobData.salary)
                       : "Not disclosed"}
