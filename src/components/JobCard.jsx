@@ -46,7 +46,7 @@ const JobCard = ({ job }) => {
           <div className="flex items-center gap-2">
             <img src={assets.money_icon} alt="Salary" />
             <span>
-              CTC:{" "}
+              RS.:{" "}
               {job.salary ? kConverter.convertTo(job.salary) : "Not disclosed"}
             </span>
           </div>
