@@ -67,7 +67,7 @@ const CandidatesSignup = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         <main className="flex-grow flex items-center justify-center">
           <div className="w-full max-w-md border border-gray-200 rounded-lg p-6">
@@ -189,7 +189,7 @@ const CandidatesSignup = () => {
             </form>
           </div>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
