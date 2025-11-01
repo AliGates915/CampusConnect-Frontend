@@ -45,7 +45,8 @@ const ApplyJob = () => {
         { jobId },
         {
           headers: {
-            token: userToken,
+            Authorization: `Bearer ${userToken}`,
+           
           },
         }
       );

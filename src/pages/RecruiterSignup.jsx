@@ -31,7 +31,12 @@ const RecruiterSignup = () => {
 
       const { data } = await axios.post(
         `${backendUrl}/company/register-company`,
-        formData
+        formData,
+         {
+        headers: {
+          "Content-Type": "multipart/form-data", // ✅ ensure correct header
+        },
+      }
       );
 
       if (data.success) {

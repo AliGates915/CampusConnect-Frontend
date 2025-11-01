@@ -89,7 +89,7 @@ export const AppContextProvider = ({ children }) => {
     try {
       const { data } = await axios.get(`${backendUrl}/job/all-jobs`);
       if (data.success) {
-        setJobs(data.jobData);
+        setJobs(data.jobs);
       } else {
         toast.error(data.message);
       }
@@ -103,7 +103,7 @@ export const AppContextProvider = ({ children }) => {
   const fetchUserApplication = async () => {
     try {
       setApplicationsLoading(true);
-
+return
       const { data } = await axios.post(
         `${backendUrl}/user/get-user-applications`,
         {},

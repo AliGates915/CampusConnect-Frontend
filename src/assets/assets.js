@@ -203,16 +203,17 @@ export const JobCategories = [
 ];
 
 export const JobLocations = [
-  "Dhaka",
-  "Chattogram",
-  "Khulna",
-  "Rajshahi",
-  "Barishal",
-  "Sylhet",
-  "Rangpur",
-  "Mymensingh",
-  "Remote",
+  "Karachi",
+  "Lahore",
+  "Islamabad",
+  "Rawalpindi",
+  "Faisalabad",
+  "Multan",
+  "Peshawar",
+  "Quetta",
+  
 ];
+
 
 // Sample data for Manage Jobs Page
 export const manageJobsData = [

@@ -40,7 +40,12 @@ const CandidatesSignup = () => {
 
       const { data } = await axios.post(
         `${backendUrl}/user/register-user`,
-        formData
+        formData,
+         {
+        headers: {
+          "Content-Type": "multipart/form-data", // ✅ ensure correct header
+        },
+      }
       );
 
       if (data.success) {

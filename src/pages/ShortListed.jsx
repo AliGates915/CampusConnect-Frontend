@@ -7,7 +7,7 @@ import Loader from "../components/Loader";
 import toast from "react-hot-toast";
 import { LoaderCircle } from "lucide-react";
 
-const ViewApplications = () => {
+const ShortListed = () => {
   const [viewApplicationsPageData, setViewApplicationsPageData] =
     useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +19,7 @@ const ViewApplications = () => {
     setIsLoading(true);
     try {
       const { data } = await axios.get(
-        `${backendUrl}/company/view-applicants`,
+        `${backendUrl}/company/shortlist-applicants`,
     
         {
           headers: { Authorization: `Bearer ${companyToken}` },
@@ -47,10 +47,7 @@ const ViewApplications = () => {
         `${backendUrl}/company/change-status`,
         { id, status },
         {
-          headers: {
-            Authorization: `Bearer ${companyToken}`,
-           
-             },
+          headers: { Authorization: `Bearer ${companyToken}` },
         }
       );
 
@@ -219,4 +216,4 @@ const ViewApplications = () => {
   );
 };
 
-export default ViewApplications;
+export default ShortListed;
