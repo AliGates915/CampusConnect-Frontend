@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
+"scripts": {
   "dev": "vite",
-  "build": "npx vite build",
+  "build": "node --run vite-build",
+  "vite-build": "node --import @vitejs/plugin-react vite build",
   "preview": "vite preview"
 },
 
