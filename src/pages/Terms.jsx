@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { faqs } from "../assets/assets";
+
+import { motion } from "framer-motion";
 import { SlideLeft, SlideUp } from "../utils/Animation";
 
 const Terms = () => {
